@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class WhyProviderScreen extends StatefulWidget {
+  const WhyProviderScreen({super.key});
 
-  int x = 10;
+  @override
+  State<WhyProviderScreen> createState() => _WhyProviderScreenState();
+}
+
+class _WhyProviderScreenState extends State<WhyProviderScreen> {
+  int count = 0;
+  @override
+  void initState() {
+    // Timer.periodic(
+    //   const Duration(microseconds: 100),
+    //   (timer) {
+    //     count++;
+    //     print(count);
+    //     setState(() {});
+    //   },
+    // );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,13 +35,13 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            child: x.toString().text.size(50).make().centered(),
+            child: count.toString().text.size(50).make().centered(),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          x++;
+          count++;
         },
         backgroundColor: Vx.blue500,
         child: const Icon(
