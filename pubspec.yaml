@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^1.1.0
   provider: ^6.0.5
   velocity_x: ^4.1.1
 
