@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/providers/count_provider.dart';
 import 'package:flutter_provider/providers/example_one_provider.dart';
-import 'package:flutter_provider/screens/example_one.dart';
+import 'package:flutter_provider/providers/favourite_provider.dart';
+import 'package:flutter_provider/screens/favorite/favourite_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,13 +18,14 @@ class MainApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => CountProvider()),
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+        ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: const ExampleOneScreen(),
+        home: FavouriteScreen(),
       ),
     );
   }
